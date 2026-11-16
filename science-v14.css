@@ -1,0 +1,7 @@
+/* Mission-window evidence and data confidence. */
+.comparison-card .compare-details{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between}
+.science-mini-stats{display:grid;gap:6px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(137,165,179,.22)}
+.science-mini-stats span{display:flex;justify-content:space-between;gap:9px;font-size:.73rem;color:#a8bcc9}
+.science-mini-stats b{color:#e3eff4;font-variant-numeric:tabular-nums}
+.science-confidence{font-size:.66rem;color:#90a9b9;margin-top:13px;line-height:1.45}
+@media (max-width:680px){.comparison-card .compare-details{display:grid;grid-template-columns:1fr 1fr}.science-mini-stats span{font-size:.7rem}}

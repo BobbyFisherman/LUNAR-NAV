@@ -1,0 +1,39 @@
+/* LUNAR/NAV v6: one continuous time control and coherent cinematic visuals */
+#missionDock{grid-template-columns:minmax(145px, .9fr) minmax(215px,1.3fr) minmax(270px,2fr) auto!important;gap:clamp(12px,2vw,24px)!important;}
+.dock-jump{display:flex;gap:8px;align-items:end;min-width:0}
+.dock-jump label{display:flex;gap:6px;flex-direction:column;min-width:0;flex:1;font-size:9px;letter-spacing:1.35px;font-weight:730;color:#9eb2b8}
+.dock-jump label span{display:block;white-space:nowrap}
+.dock-jump input{box-sizing:border-box;width:100%;background:#18232c;border:1px solid #354750;color:#f1f9f7;border-radius:8px;min-height:40px;padding:9px;font:550 12px ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:dark}
+.dock-jump button{min-height:40px;padding:0 11px;background:#c5e8db;color:#122a28;border:0;border-radius:8px;font-size:11px;white-space:nowrap;font-weight:800;transition:filter .2s,transform .2s}
+.dock-jump button:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.warp-scrubber{position:relative;min-width:0}.warp-scrubber .dock-scrub-meta{margin-bottom:5px;align-items:center}.warp-scrubber .dock-scrub-meta strong{font-size:11px;white-space:nowrap}
+.warp-control{display:grid;grid-template-columns:18px minmax(100px,1fr) 18px;align-items:center;gap:6px}.warp-direction{color:#a9c6ce;font-size:17px;text-align:center}
+#globalScrub{-webkit-appearance:none;appearance:none;width:100%;height:14px;cursor:ew-resize;border-radius:30px;border:1px solid #435965;background:linear-gradient(90deg,#59738f 0,#243c51 44%,#182d34 49%,#97d8c0 50%,#243c51 56%,#59738f 100%);box-shadow:inset 0 1px 8px #050d1b}
+#globalScrub::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:26px;border-radius:8px;border:2px solid #dafded;background:#8dd0c9;box-shadow:0 0 0 5px #a8efdf14,0 0 20px #99f6d035}
+#globalScrub::-moz-range-thumb{width:16px;height:22px;border-radius:8px;border:2px solid #dafded;background:#8dd0c9;box-shadow:0 0 14px #99f6d055}
+.warp-scale{display:flex;justify-content:space-between;align-items:center;margin-top:4px;font-size:9px;letter-spacing:1px;color:#869ca9}.warp-scale strong{color:#c4e5e1;font-size:9px;font-weight:750;transition:color .2s}
+body.time-warping .warp-scale strong{color:#ffe0a5;text-shadow:0 0 12px #ffde9455}
+body.time-warping .warp-control:after{content:'';position:absolute;top:21px;left:20px;right:20px;height:23px;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 25px,#e2f8ff35 26px 29px,transparent 30px 35px);animation:warpTracks .36s linear infinite;mix-blend-mode:screen;mask-image:linear-gradient(90deg,transparent,#fff,transparent)}
+@keyframes warpTracks{from{background-position:0 0}to{background-position:70px 0}}
+#orbitSvg{width:100%;min-height:440px;filter:contrast(1.08) saturate(1.13)}
+#orbitSvg .flight-tracker{filter:drop-shadow(0 0 8px #c2f3ff)}
+#orbitSvg .solar-limb{animation:solarPulse 6s ease-in-out infinite;transform-origin:center}
+@keyframes solarPulse{0%,100%{opacity:.62}50%{opacity:.95}}
+#energyChart{overflow:visible;min-height:320px}
+#energyChart path.main-energy-line{filter:drop-shadow(0 0 6px currentColor);transition:opacity .25s}
+#energyChart .chart-cursor{pointer-events:none}
+#energyChart .energy-tooltip{pointer-events:none}
+.solar-visual-v6{position:relative;height:auto;min-height:225px;background:radial-gradient(circle at 14% 42%,#2d231b,#0a1724 42%,#050a10 90%);border-radius:12px;overflow:hidden;border:1px solid #263945;box-shadow:inset 0 0 42px #010a16}
+.solar-visual-v6 svg{display:block;width:100%;height:auto;min-height:220px}
+.solar-scene-caption{position:absolute;left:15px;right:15px;bottom:10px;display:flex;justify-content:space-between;gap:8px;font-size:9px;letter-spacing:1px;font-weight:700;color:#b0cad3;text-shadow:0 1px 8px #000}
+#solarScene .solar-ray{animation:sunrayMove 4s linear infinite}
+@keyframes sunrayMove{to{stroke-dashoffset:-34}}
+.comm-shared-clock{padding:12px 13px;background:#132431;border:1px solid #2e4853;border-radius:10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:#b3cad6;font:650 10px ui-monospace,monospace;letter-spacing:.7px}.comm-shared-clock time{margin-left:auto;color:#f0f9fa}.ticker-dot{width:7px;height:7px;border-radius:50%;background:#80dbc7;box-shadow:0 0 12px #80dbc7aa}
+#commSvg{width:100%;min-height:365px;filter:contrast(1.06) saturate(1.15)}
+#commSvg .signal-dash{animation:signalMotion 2.6s linear infinite}
+@keyframes signalMotion{to{stroke-dashoffset:-66}}
+#commSvg .signal-pulse{animation:commDot 3s ease-in-out infinite}
+@keyframes commDot{0%,100%{opacity:.15}50%{opacity:1}}
+@media(max-width:1150px){#missionDock{grid-template-columns:1fr 1.2fr!important}.dock-jump{order:2}.warp-scrubber{order:3}.dock-actions{order:4}}
+@media(max-width:680px){#missionDock{grid-template-columns:1fr!important;padding:13px 15px!important;gap:10px!important}.dock-jump{order:1}.dock-identity{order:0}.warp-scrubber{order:2}.dock-actions{order:3}body{padding-bottom:280px!important}.solar-scene-caption{font-size:8px}.comm-shared-clock time{margin-left:0}}
+@media(prefers-reduced-motion:reduce){.solar-limb,.signal-dash,.signal-pulse,.solar-ray{animation:none!important}body.time-warping .warp-control:after{animation:none!important}}

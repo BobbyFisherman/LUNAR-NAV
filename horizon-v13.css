@@ -1,0 +1,37 @@
+/* V13 · South-pole picking and horizon science */
+.moon-panel .nasa-asset-status{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;margin:0 16px 10px;max-width:none;border:1px solid #334f61;border-radius:9px;padding:10px 13px;background:#102434;color:#c0d7e4;text-align:left;font-size:11px;z-index:1;}
+.moon-panel .nasa-asset-status a{color:#bceae5;text-decoration:underline}
+.globe-wrap .polar-nav{position:absolute;left:14px;top:auto;bottom:90px;display:flex;flex-direction:column;gap:6px;z-index:6;max-width:135px}
+.globe-wrap .polar-nav button{border:1px solid #365064a8;background:#091c2bdc;color:#d9edfb;padding:8px 10px;border-radius:7px;font-size:10px;text-align:left;transition:.15s}
+.globe-wrap .polar-nav button:hover,.globe-wrap .polar-nav button:focus-visible{background:#264961}
+.globe-wrap .lunar-sky-context,.globe-wrap .globe-watermark,.globe-wrap .globe-controls{pointer-events:none}
+.globe-wrap .globe-controls button{pointer-events:auto}
+#moonCanvas{touch-action:none;cursor:crosshair}
+.map-source-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:7px 21px 13px;background:#0c1c2b;color:#9cbed0;font-size:10px}
+.map-source-footer a{text-decoration:underline;color:#ccedf0}
+.orbit-reset{background:#142f43;color:#bce9f2;border:1px solid #487b88;border-radius:7px;padding:7px 11px;font-size:10px;font-weight:800;letter-spacing:.05em;white-space:nowrap;cursor:pointer}
+.orbit-reset:hover{background:#28526a}
+.horizon-section{background:linear-gradient(155deg,#0d1d2b,#06111d 72%);color:#dfedf6;border:1px solid #32536b;padding:26px;margin:24px auto 0;max-width:1600px}
+.horizon-top{display:flex;justify-content:space-between;align-items:start;gap:22px;margin-bottom:16px}
+.horizon-top h2{font-size:clamp(22px,2vw,29px);margin:4px 0 8px;letter-spacing:-.035em}
+.horizon-summary{color:#91aabb;font-size:12px;margin:0;max-width:620px}
+.horizon-change{display:flex;flex-direction:column;gap:6px;min-width:228px}.horizon-change label{color:#98bbcd;font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:800}
+.horizon-change select{padding:10px;border:1px solid #3c647a;border-radius:8px;background:#102b3e;color:#edf7ff}
+.horizon-change span{font-size:11px;color:#a3c0ce}
+.horizon-visual-shell{border:1px solid #33536b;position:relative;border-radius:12px;overflow:hidden;background:#030a16}
+.horizon-visual-shell svg{width:100%;display:block;height:auto;min-height:230px}
+.horizon-corner{position:absolute;right:16px;top:13px;padding:10px 15px;min-width:180px;max-width:35%;border:1px solid #53798c;background:#091b2be8;border-radius:9px;display:flex;flex-direction:column;gap:3px;box-shadow:0 2px 16px #0008}
+.horizon-corner small{color:#aabfc7;font-size:9px;font-weight:750;letter-spacing:1px}
+.horizon-corner strong{font-size:21px;color:#f4d68b}
+.horizon-corner span{font-size:10px;color:#8ab1c7}
+.horizon-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:13px}
+.horizon-stat{border:1px solid #2e475b;background:#102b3a6b;border-radius:11px;padding:14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.horizon-stat span{font-size:10px;letter-spacing:1.2px;font-weight:800;color:#96bac7}
+.horizon-stat strong{font-size:22px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:normal;line-height:1.2}
+.horizon-stat.sun strong{color:#f0cb88}.horizon-stat.earth strong{color:#8ad5f1}
+.horizon-stat small{font-size:11px;color:#abc3d0;line-height:1.4}
+.horizon-source-row{margin-top:14px;padding-top:13px;border-top:1px solid #2b485a;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;color:#aec3d0;font-size:11px}
+.horizon-source-row span{flex:1;min-width:200px}.horizon-source-row a{color:#a6e5ec;white-space:nowrap}
+.horizon-source-row button{color:#071824;font-weight:700;background:#aad8df;border:0;padding:9px 13px;border-radius:7px;cursor:pointer}
+@media(max-width:960px){.horizon-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.horizon-top{flex-wrap:wrap}.horizon-change{width:100%}}
+@media(max-width:540px){.horizon-stat-grid{grid-template-columns:1fr 1fr}.horizon-section{padding:14px}.horizon-stat{padding:10px}.horizon-stat strong{font-size:18px}.horizon-corner{right:5px;top:5px;min-width:130px;padding:8px}.horizon-corner strong{font-size:15px}.globe-wrap .polar-nav{top:auto;bottom:100px;max-width:103px}.globe-wrap .polar-nav button{padding:6px 7px;font-size:9px}}

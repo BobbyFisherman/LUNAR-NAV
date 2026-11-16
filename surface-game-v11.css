@@ -1,0 +1,36 @@
+/* The new WebGL expedition inherits the v9 dashboard chrome while replacing only its 3-D scene. */
+#roverGame { display:block;width:100%;height:100%;background:radial-gradient(ellipse at 65% 32%,#222830,#070b11 75%);cursor:grab; }
+#roverGame:active { cursor:grabbing; }
+.rover-stage{box-shadow:0 25px 82px #000a, inset 0 0 0 1px #dce6e41c;border-color:#adb9b856;}
+.rover-stage::after{content:"";position:absolute;pointer-events:none;inset:0;z-index:1;background:radial-gradient(ellipse at center,transparent 52%,#01040772 100%);}
+.rover-stage .rover-hud,.rover-stage .rover-top-label,.rover-stage .rover-gps,.rover-stage .rover-controls-guide {z-index:7;}
+.rover-phase-indicator{position:absolute;z-index:9;left:19px;top:55px;font:800 11px ui-monospace,monospace;letter-spacing:.16em;color:#ddfff1;text-shadow:0 1px 8px #020b0d;background:#0b2024b3;border:1px solid #a3eac85e;padding:9px 14px;border-radius:8px;pointer-events:none}
+.rover-phase-indicator[hidden],.rover-interaction[hidden]{display:none!important}
+.rover-fade{position:absolute;z-index:12;inset:0;background:#010509;pointer-events:none;opacity:0;transition:opacity .55s ease;}
+.rover-fade.black{opacity:1;}
+.rover-interaction{position:absolute;z-index:8;bottom:148px;left:50%;transform:translateX(-50%);width:min(590px,80%);text-align:center;background:#081b24e9;color:#e4fff3;border:1px solid #8be8c39f;box-shadow:0 10px 35px #0008;border-radius:12px;padding:15px 18px;font-size:12px;font-weight:700;line-height:1.55;letter-spacing:.035em;pointer-events:none}
+.rover-interaction b{color:#c5ffe6;background:#2c705c90;padding:2px 6px;border-radius:4px}
+.rover-center-prompt h2{font-size:clamp(35px,4.0vw,62px)}
+.rover-key-hint{max-width:660px}
+.rover-ops .rover-ops-stats{line-height:1.3}
+@media(max-width:800px){.rover-interaction{width:88%;bottom:169px;font-size:10px}.rover-phase-indicator{top:44px;left:9px;font-size:9px}.rover-hud{bottom:116px}}
+@media(prefers-reduced-motion:reduce){.rover-fade{transition:none}}
+.rover-cockpit{position:absolute;inset:0;z-index:9;pointer-events:none;color:#e5f9f7;text-shadow:0 2px 8px #000;font:700 10px ui-monospace,monospace;letter-spacing:.11em;background:linear-gradient(90deg,#02080daf 0%,transparent 15%,transparent 85%,#02080dab 100%),linear-gradient(0deg,#071119c9,transparent 22%)}
+.rover-cockpit[hidden]{display:none}
+.cockpit-header{position:absolute;top:19px;left:50%;transform:translateX(-50%);padding:8px 15px;border:1px solid #a6d3d35e;background:#03151cb3;border-radius:5px}
+.cockpit-left{position:absolute;left:25px;bottom:35px;line-height:2.2;color:#c4ede4}
+.cockpit-right{position:absolute;right:25px;bottom:35px;text-align:right;line-height:2.2;color:#c4ede4}
+.cockpit-reticle{position:absolute;left:50%;top:52%;width:150px;height:150px;transform:translate(-50%,-50%);border:1px dashed #d5fff062;border-radius:50%;box-shadow:0 0 0 15px #050d1319}
+.cockpit-reticle::before,.cockpit-reticle::after{content:"";position:absolute;background:#d5fff085;left:50%;top:50%;transform:translate(-50%,-50%)}
+.cockpit-reticle::before{width:50px;height:1px}.cockpit-reticle::after{width:1px;height:50px}
+.reticle-center{position:absolute;left:50%;top:50%;width:5px;height:5px;border:1px solid #e6fff5;border-radius:50%;transform:translate(-50%,-50%)}
+
+.rover-objective-card{position:absolute;z-index:8;left:18px;top:88px;min-width:244px;max-width:360px;border-radius:12px;background:linear-gradient(120deg,#071923eb,#112c38e6);border:1px solid #87ead06b;box-shadow:0 16px 35px #0008;padding:11px 14px;display:flex;flex-direction:column;gap:5px;pointer-events:none;}
+.rover-objective-card span{font-size:12px;font-weight:800;letter-spacing:.12em;color:#e4fff4;}
+.rover-objective-card small{font:700 10px ui-monospace,monospace;color:#c3b6a4;letter-spacing:.06em;}
+.rover-objective-card small.collected{color:#8cf5d1;}
+#roverImpactInfo:not(:empty){color:#ffce7e;padding-top:2px;}
+.rover-stage .rover-objective-card{z-index:8;}
+@media(max-width:720px){.rover-objective-card{top:60px;left:8px;min-width:180px;max-width:230px;padding:9px;font-size:10px;} .rover-objective-card span{font-size:10px;} }
+
+#roverTouchInteract{background:linear-gradient(135deg,#2e6e58,#0d5d65);color:#f5fff9;font-weight:900;border-color:#97f3d0;}

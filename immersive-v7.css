@@ -1,0 +1,37 @@
+/* V7 NASA scene / true model interactions */
+#orbitSvg,#commSvg{background:radial-gradient(ellipse at 45% 60%,#142b40 0%,#050912 72%);border-radius:12px}
+.space-panel{overflow:hidden}
+#orbitSvg{width:100%;display:block;min-height:390px;max-height:610px}
+#commSvg{width:100%;display:block;min-height:300px}
+.v7-orbit-plane ellipse{animation: orbit-highlight 5s ease-in-out infinite alternate}
+.v7-transfer-path{animation: v7Dash 12s linear infinite}
+.sun-flare{animation: solarBloom 4.5s ease-in-out infinite alternate}
+@keyframes v7Dash{from{stroke-dashoffset:0}to{stroke-dashoffset:-130}}
+@keyframes solarBloom{to{opacity:.7;transform:scale(1.03);transform-origin:center}}
+@keyframes orbit-highlight{to{stroke-opacity:.72}}
+.lunar-asset-actions{display:flex;align-items:center;gap:8px}
+.moon-mode-button{border:1px solid rgba(188,238,223,.43);background:#102e35ec;color:#d8f9e9;cursor:pointer;font:700 10px/1.1 inherit;letter-spacing:.035em;padding:10px 12px;border-radius:7px;white-space:nowrap;transition:background .2s,transform .2s}
+.moon-mode-button:hover,.moon-mode-button[aria-pressed="true"]{background:#d7f3e7;color:#09232a;transform:translateY(-1px)}
+.nasa-model-shell{position:absolute;inset:0;display:none;z-index:4;background:radial-gradient(ellipse at 53% 50%,#203246 0%,#080e17 66%);border-radius:inherit;overflow:hidden}
+.nasa-model-shell.active{display:block}
+.nasa-model-shell model-viewer{width:100%;height:100%;display:block;outline:0;--poster-color:transparent;filter:contrast(1.1)}
+.nasa-model-shell .model-loading{color:#c8e4dd;display:flex;align-items:center;justify-content:center;position:absolute;inset:0;font-size:15px;font-weight:600}
+.nasa-model-shell .model-attribution{position:absolute;bottom:16px;left:16px;right:16px;text-align:center;font-size:11px;color:#b7c9d3;pointer-events:none;text-shadow:0 2px 10px #000}
+.nasa-model-shell .model-attribution a{color:#d0f9e7;pointer-events:auto}
+#moonCanvas.model-covered,#moonOverlay.model-covered{opacity:0;pointer-events:none}
+.globe-controls{z-index:7}
+@media(max-width:720px){.lunar-asset-actions{gap:4px}.moon-mode-button{padding:8px 6px;font-size:9px}#orbitSvg{min-height:275px}#commSvg{min-height:240px}}
+@media(prefers-reduced-motion:reduce){.v7-transfer-path,.sun-flare,.v7-orbit-plane ellipse{animation:none!important}}
+
+.lunar-sky-context{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.sky-badge{position:absolute;display:flex;gap:11px;align-items:center;max-width:185px;border:1px solid rgba(160,202,211,.27);border-radius:12px;background:rgba(5,17,26,.76);box-shadow:0 10px 25px #0004;backdrop-filter:blur(8px);color:#e8f6fa;padding:8px 11px;line-height:1.2}
+.sky-badge.sun{top:65px;left:17px}.sky-badge.earth{bottom:62px;right:18px}
+.sky-badge small{display:block;font-size:9px;letter-spacing:1px;color:#a2c5d1;font-weight:760}.sky-badge strong{display:block;margin-top:3px;font-size:17px;letter-spacing:-.3px;font-variant-numeric:tabular-nums}
+.sky-badge .mini-orb{position:relative;display:block;width:43px;height:43px;flex-shrink:0;border-radius:50%;overflow:hidden;box-shadow:0 0 18px #d09a5a38}
+.mini-orb.terrestrial{box-shadow:0 0 22px #5dacc06b}
+.sky-badge img{position:absolute;width:100%;height:100%;object-fit:cover;border-radius:50%;inset:0}
+.sky-badge img[hidden]{display:none}
+@media(max-width:660px){.sky-badge{padding:6px 8px;gap:6px}.sky-badge.sun{top:53px;left:6px}.sky-badge.earth{right:6px;bottom:48px}.sky-badge .mini-orb{width:27px;height:27px}.sky-badge strong{font-size:12px}.sky-badge small{font-size:7px}}
+
+.mini-orb.solar{background:radial-gradient(circle at 43% 40%,#ffe09d 7%,#f5a649 70%,#d86c2b 100%)}
+.sky-badge.below-horizon{border-color:#986a5b6d}.sky-badge.below-horizon strong{color:#f3b4ab}

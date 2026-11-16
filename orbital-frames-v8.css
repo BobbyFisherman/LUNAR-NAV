@@ -1,0 +1,18 @@
+/* V8 — dual selectable orbital reference frames */
+.orbit-modes{display:flex;align-items:center;gap:3px;padding:3px;border:1px solid rgba(160,205,215,.24);border-radius:10px;background:rgba(5,18,28,.78);box-shadow:inset 0 1px 2px #0005}
+.orbit-mode{padding:9px 12px;min-height:32px;white-space:nowrap;border:0;border-radius:7px;background:transparent;color:#aabec9;cursor:pointer;font-size:11px;font-family:inherit;font-weight:780;letter-spacing:.013em;transition:background .2s,color .2s,box-shadow .2s}
+.orbit-mode:hover{background:#244053;color:#f6ffff}
+.orbit-mode.selected,.orbit-mode[aria-pressed="true"]{background:#d6efe6;color:#11342e;box-shadow:0 2px 10px #0005}
+.orbit-mode:focus-visible{outline:2px solid #75e6c9;outline-offset:2px}
+.space-panel .panel-top.floating{flex-wrap:wrap;gap:9px;min-height:50px}
+.space-panel .panel-top .chip-dark{font-size:9px}
+#orbitSvg{min-height:440px}
+#orbitSvg .v8-sun-pulse{animation:v8SolarPulse 4.5s ease-in-out infinite alternate}
+#orbitSvg .v8-track-halo{animation:v8TrackerGlow 1.7s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center}
+@keyframes v8SolarPulse{to{opacity:.6;transform:scale(1.035);transform-box:fill-box;transform-origin:center}}
+@keyframes v8TrackerGlow{to{opacity:.4;transform:scale(1.12)}}
+@media(max-width:820px){.orbit-modes{order:3;width:100%;justify-content:space-between}.orbit-mode{flex:1}.space-panel .panel-top.floating{position:relative;display:flex}.space-panel .panel-top .chip-dark{margin-left:auto}}
+@media(prefers-reduced-motion:reduce){#orbitSvg .v8-sun-pulse,#orbitSvg .v8-track-halo{animation:none!important}}
+/* Ensure both orbital reference buttons receive clicks above the animated SVG. */
+.orbit-modes{position:relative;z-index:30;pointer-events:auto}
+.orbit-mode{pointer-events:auto;touch-action:manipulation}
